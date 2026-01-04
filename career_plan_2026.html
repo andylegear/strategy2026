@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Career Development Plan - Andrew Le Gear</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #3182ce;
+            --light: #ebf8ff;
+            --success: #38a169;
+            --warning: #dd6b20;
+            --text: #2d3748;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(26, 54, 93, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .header-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .header-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        section h2::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Executive Summary */
+        .executive-summary {
+            background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pillar-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .pillar-card h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        /* Strategic Pillars */
+        .pillar-section {
+            margin-bottom: 30px;
+        }
+
+        .pillar-section h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pillar-section h3 .badge {
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pillar-content {
+            padding-left: 20px;
+        }
+
+        .pillar-content h4 {
+            color: var(--text);
+            font-size: 1rem;
+            margin: 15px 0 8px 0;
+            font-weight: 600;
+        }
+
+        .pillar-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .pillar-content li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #4a5568;
+        }
+
+        .pillar-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Roadmap Section */
+        .roadmap-container {
+            padding: 40px 0;
+        }
+
+        .roadmap {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* Central timeline line */
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--success) 100%);
+            border-radius: 3px;
+            top: 0;
+        }
+
+        .quarter {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .quarter:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Quarter marker */
+        .quarter-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4);
+            border: 4px solid white;
+        }
+
+        .quarter-content {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 20px;
+            width: 100%;
+            align-items: start;
+        }
+
+        .left-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-right: 20px;
+        }
+
+        .right-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-left: 20px;
+        }
+
+        .center-spacer {
+            display: flex;
+            justify-content: center;
+            padding-top: 5px;
+        }
+
+        .roadmap-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .roadmap-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .roadmap-card.teaching {
+            border-top: 4px solid #9f7aea;
+        }
+
+        .roadmap-card.research {
+            border-top: 4px solid #38a169;
+        }
+
+        .roadmap-card.admin {
+            border-top: 4px solid #dd6b20;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .teaching .card-icon {
+            background: #faf5ff;
+            color: #9f7aea;
+        }
+
+        .research .card-icon {
+            background: #f0fff4;
+            color: #38a169;
+        }
+
+        .admin .card-icon {
+            background: #fffaf0;
+            color: #dd6b20;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .teaching .card-title {
+            color: #9f7aea;
+        }
+
+        .research .card-title {
+            color: #38a169;
+        }
+
+        .admin .card-title {
+            color: #dd6b20;
+        }
+
+        .card-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-items li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: #4a5568;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .card-items li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Discussion Points */
+        .discussion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .discussion-item {
+            background: linear-gradient(135deg, #f7fafc 0%, white 100%);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .discussion-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .discussion-item p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        .legend-color.teaching { background: #9f7aea; }
+        .legend-color.research { background: #38a169; }
+        .legend-color.admin { background: #dd6b20; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .roadmap::before {
+                left: 30px;
+            }
+
+            .quarter-content {
+                grid-template-columns: 1fr;
+                padding-left: 80px;
+            }
+
+            .quarter-marker {
+                left: 30px;
+            }
+
+            .left-cards, .right-cards {
+                padding: 0;
+            }
+
+            .center-spacer {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Academic Career Development Plan</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 20px; opacity: 0.9;">12-Month Strategy</p>
+            <div class="header-info">
+                <span>👤 <strong>Faculty Member:</strong> Andrew Le Gear</span>
+                <span>🏛️ <strong>Department:</strong> CSIS, University of Limerick</span>
+                <span>📅 <strong>Period:</strong> Next 12 Months</span>
+            </div>
+        </header>
+
+        <!-- Executive Summary -->
+        <section class="executive-summary">
+            <h2>1. Executive Summary</h2>
+            <p style="font-size: 1.05rem; margin-bottom: 25px;">
+                This strategic plan is built upon five integrated pillars designed to accelerate my integration into the University of Limerick and the wider academic community.
+            </p>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h4>🎓 Teaching Excellence & SoTL</h4>
+                    <p>Delivering modules (Software Quality, Blockchain) while advancing pedagogical qualifications (PGDip LTA & M.Ed.) and conducting research into AI-enhanced collaborative learning (ABCD). Formation of new modules in Blockchain.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>🔬 Research Innovation</h4>
+                    <p>Advancing blockchain performance architectures and software maintenance through industrial (Nant Global Financial) and academic (Lero/Bernal/Maastricht) collaborations.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>💰 Strategic Funding</h4>
+                    <p>Securing internal early-career support and external industrial partnerships via the 50/50 model, IRCSET and CSIS.</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>🌍 Cross-Disciplinary & International</h4>
+                    <p>Building a robust network spanning the Bernal Institute, HRI, and international research committees, including partnerships in the Netherlands (Ashish Sai).</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>📋 Administrative Integration</h4>
+                    <p>Ensuring full compliance with university induction and progression milestones.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Pillars -->
+        <section>
+            <h2>2. Strategic Pillars</h2>
+
+            <div class="pillar-section">
+                <h3><span class="badge">A</span> Teaching & Scholarship (SoTL)</h3>
+                <div class="pillar-content">
+                    <h4>Module Delivery</h4>
+                    <ul>
+                        <li>ISE: Blockchain module (March–June)</li>
+                        <li>CSIS: Taking over Software Quality module (Jan–May) from John Noll</li>
+                    </ul>
+                    <h4>Curriculum Development</h4>
+                    <ul>
+                        <li>Designing a new Blockchain module for CSIS (M.Sc. Software Engineering or B.Sc. Computer Systems)</li>
+                        <li>Collaboration with Ide O'Sullivan and Angelica Risque for APRC/Book of Modules</li>
+                    </ul>
+                    <h4>Professional Development</h4>
+                    <ul>
+                        <li>Completion of PGDip in Learning, Teaching & Assessment (LTA)</li>
+                        <li>Transitioning to M.Ed. (Sept onwards)</li>
+                    </ul>
+                    <h4>SoTL Research</h4>
+                    <ul>
+                        <li>Study on "Gen-Pair-Share" and AI-driven assessment in CS</li>
+                        <li>Ethics approval already obtained for assessment methods research</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pillar-section">
+                <h3><span class="badge">B</span> Research & Innovation</h3>
+                <div class="pillar-content">
+                    <h4>Industrial Collaboration</h4>
+                    <ul>
+                        <li>Ongoing partnership with Nant Global Financial (formerly Horizon Globex) on performance architectures for blockchain-based trading systems</li>
+                    </ul>
+                    <h4>International Collaboration</h4>
+                    <ul>
+                        <li>Co-authoring a Blockchain Architecture research paper with Ashish Sai (University of Maastricht)</li>
+                        <li>Continuing successful collaborative relationship established during previous projects at Horizon Globex</li>
+                    </ul>
+                    <h4>Core Research Strands</h4>
+                    <ul>
+                        <li><strong>Blockchain:</strong> Keynote speaker, Program Committee member, and Reviewer for BCCA 2026</li>
+                        <li><strong>Software Maintenance:</strong> Reviving research via collaboration with Colin Venters (ISE)</li>
+                        <li><strong>Interdisciplinary:</strong> Blockchain & Citizen Science with Mark Marshall</li>
+                    </ul>
+                    <h4>Intellectual Property</h4>
+                    <ul>
+                        <li>Finalizing patent filings initiated at Nant Global Financial prior to joining UL</li>
+                    </ul>
+                    <h4>Affiliations</h4>
+                    <ul>
+                        <li>Tight integration with Lero (ABCD Research Group under Jim Buckley and Chris Exton) and the Bernal Institute</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pillar-section">
+                <h3><span class="badge">C</span> Funding & Sustainability</h3>
+                <div class="pillar-content">
+                    <h4>Internal</h4>
+                    <ul>
+                        <li>Applying for Early Career Researcher Funding for a Ph.D. student via CSIS</li>
+                    </ul>
+                    <h4>External</h4>
+                    <ul>
+                        <li>Reviving the IRCSET application with Mark Marshall</li>
+                        <li>Exploring the 50/50 Funding Partnership model via Nant Global Financial and the SSPC within the Bernal Institute</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pillar-section">
+                <h3><span class="badge">D</span> Academic Connections & Networking</h3>
+                <div class="pillar-content">
+                    <h4>Internal (UL)</h4>
+                    <ul>
+                        <li>Establishing links with the Bernal Institute (Cybersecurity section/Donna O'Shea)</li>
+                        <li>HRI (Prof. Katie Crowley)</li>
+                        <li>SSPC (Sarah Hayes)</li>
+                    </ul>
+                    <h4>International</h4>
+                    <ul>
+                        <li>Strengthening ties with the University of Maastricht through Ashish Sai</li>
+                        <li>International BCCA community engagement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pillar-section">
+                <h3><span class="badge">E</span> University Administration</h3>
+                <div class="pillar-content">
+                    <h4>Compliance</h4>
+                    <ul>
+                        <li>Completion of 6-month and 12-month induction checklists</li>
+                    </ul>
+                    <h4>Visibility</h4>
+                    <ul>
+                        <li>Full completion of UL Research Profile for SharePoint</li>
+                    </ul>
+                    <h4>Appraisal</h4>
+                    <ul>
+                        <li>Preparation for PDR progression meeting (September)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12-Month Roadmap -->
+        <section>
+            <h2>3. 12-Month Timeline (Visual Roadmap)</h2>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color teaching"></div>
+                    <span>Teaching & Education</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color research"></div>
+                    <span>Research & Innovation</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color admin"></div>
+                    <span>Admin & Funding</span>
+                </div>
+            </div>
+
+            <div class="roadmap-container">
+                <div class="roadmap">
+                    <!-- Q1 -->
+                    <div class="quarter">
+                        <div class="quarter-content">
+                            <div class="left-cards">
+                                <div class="roadmap-card teaching">
+                                    <div class="card-header">
+                                        <div class="card-icon">📖</div>
+                                        <span class="card-title">Teaching & Education</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Deliver Software Quality module</li>
+                                        <li>Start ISE Blockchain module</li>
+                                        <li>Finish PGDip LTA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="center-spacer">
+                                <div class="quarter-marker">Q1<br><small>M1-3</small></div>
+                            </div>
+                            <div class="right-cards">
+                                <div class="roadmap-card research">
+                                    <div class="card-header">
+                                        <div class="card-icon">🔬</div>
+                                        <span class="card-title">Research & Innovation</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Patent filing completion</li>
+                                        <li>Kickoff Blockchain Architecture paper with Ashish Sai</li>
+                                    </ul>
+                                </div>
+                                <div class="roadmap-card admin">
+                                    <div class="card-header">
+                                        <div class="card-icon">📋</div>
+                                        <span class="card-title">Admin & Funding</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Complete 6-month induction checklist</li>
+                                        <li>Apply for Early Career Researcher Funding</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="quarter">
+                        <div class="quarter-content">
+                            <div class="left-cards">
+                                <div class="roadmap-card research">
+                                    <div class="card-header">
+                                        <div class="card-icon">🔬</div>
+                                        <span class="card-title">Research & Innovation</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>BCCA 2026 PC Review duties</li>
+                                        <li>Data collection for SoTL research</li>
+                                    </ul>
+                                </div>
+                                <div class="roadmap-card admin">
+                                    <div class="card-header">
+                                        <div class="card-icon">📋</div>
+                                        <span class="card-title">Admin & Funding</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Finalize UL Research Profile</li>
+                                        <li>Draft IRCSET revival proposal</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="center-spacer">
+                                <div class="quarter-marker">Q2<br><small>M4-6</small></div>
+                            </div>
+                            <div class="right-cards">
+                                <div class="roadmap-card teaching">
+                                    <div class="card-header">
+                                        <div class="card-icon">📖</div>
+                                        <span class="card-title">Teaching & Education</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Complete ISE Blockchain module</li>
+                                        <li>Gen-Pair-Share study implementation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="quarter">
+                        <div class="quarter-content">
+                            <div class="left-cards">
+                                <div class="roadmap-card teaching">
+                                    <div class="card-header">
+                                        <div class="card-icon">📖</div>
+                                        <span class="card-title">Teaching & Education</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Start M.Ed. (September)</li>
+                                        <li>Propose new CSIS Blockchain module to APRC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="center-spacer">
+                                <div class="quarter-marker">Q3<br><small>M7-9</small></div>
+                            </div>
+                            <div class="right-cards">
+                                <div class="roadmap-card research">
+                                    <div class="card-header">
+                                        <div class="card-icon">🔬</div>
+                                        <span class="card-title">Research & Innovation</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>BCCA 2026 Keynote delivery</li>
+                                        <li>Submit SoTL paper to UL Teaching Conference</li>
+                                    </ul>
+                                </div>
+                                <div class="roadmap-card admin">
+                                    <div class="card-header">
+                                        <div class="card-icon">📋</div>
+                                        <span class="card-title">Admin & Funding</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>PDR Progression Meeting (September)</li>
+                                        <li>Explore SSPC 50/50 funding</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="quarter">
+                        <div class="quarter-content">
+                            <div class="left-cards">
+                                <div class="roadmap-card research">
+                                    <div class="card-header">
+                                        <div class="card-icon">🔬</div>
+                                        <span class="card-title">Research & Innovation</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>BCCA 2026 conference attendance</li>
+                                        <li>Finalize paper with Ashish Sai</li>
+                                    </ul>
+                                </div>
+                                <div class="roadmap-card admin">
+                                    <div class="card-header">
+                                        <div class="card-icon">📋</div>
+                                        <span class="card-title">Admin & Funding</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Year 1 Review</li>
+                                        <li>12-month induction checklist completion</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="center-spacer">
+                                <div class="quarter-marker">Q4<br><small>M10-12</small></div>
+                            </div>
+                            <div class="right-cards">
+                                <div class="roadmap-card teaching">
+                                    <div class="card-header">
+                                        <div class="card-icon">📖</div>
+                                        <span class="card-title">Teaching & Education</span>
+                                    </div>
+                                    <ul class="card-items">
+                                        <li>Finalize new module descriptors</li>
+                                        <li>Submit Education Journal paper</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discussion Points -->
+        <section>
+            <h2>4. Discussion Points for Head of Department</h2>
+            <div class="discussion-grid">
+                <div class="discussion-item">
+                    <h4>📚 Teaching</h4>
+                    <p>Brightspace, class list, course details, key dates for Software Quality module.</p>
+                </div>
+                <div class="discussion-item">
+                    <h4>📋 Administrative</h4>
+                    <p>September PDR, November probation completion.</p>
+                </div>
+                <div class="discussion-item">
+                    <h4>✈️ Conference Funding</h4>
+                    <p>Confirmation of budget/support for BCCA 2026 attendance and keynote delivery.</p>
+                </div>
+                <div class="discussion-item">
+                    <h4>🎯 Curriculum Expansion</h4>
+                    <p>Discussion on the strategic fit of the new Blockchain module within the M.Sc. or Undergraduate Computer Systems pathways.</p>
+                </div>
+                <div class="discussion-item">
+                    <h4>💰 Strategic Funding</h4>
+                    <p>Discussion regarding the application for Early Career Researcher Funding and navigating the 50/50 model with Nant Global Financial.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 30px; color: #718096; font-size: 0.9rem;">
+            <p>Academic Career Development Plan | Andrew Le Gear | University of Limerick | 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
